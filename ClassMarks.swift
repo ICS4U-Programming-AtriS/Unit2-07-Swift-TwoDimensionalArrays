@@ -33,14 +33,12 @@ func generateRandomMark() -> Int {
      cos(2.0 * Double.pi * uniformNum2)
     // Create the mark using the Gaussian value
     var mark: Int = Int(nextGaussian * stdDevMark + medianMark)
-
     // Clamp the mark
     if mark < minMark {
         mark = minMark
     } else if mark > maxMark {
         mark = maxMark
     }
-    
     // Return the mark
     return mark
 }
@@ -52,7 +50,6 @@ func generateRandomMark() -> Int {
 func generateMarks(_ studentsArr: [String], _ assignmentsArr: [String]) -> [[String]] {
     // Create a 2D array
     var table: [[String]] = [[]]
-    
     // Create the header row
     let headerRow: [String] = ["Students"] + assignmentsArr
     // Set the header row in the marks table
