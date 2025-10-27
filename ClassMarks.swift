@@ -54,7 +54,7 @@ func generateMarks(_ studentsArr: [String], _ assignmentsArr: [String]) -> [[Str
     var table: [[String]] = [[]]
     
     // Create the header row
-    var headerRow: [String] = ["Students"] + assignmentsArr
+    let headerRow: [String] = ["Students"] + assignmentsArr
     // Set the header row in the marks table
     table[0] = headerRow
 
@@ -65,7 +65,7 @@ func generateMarks(_ studentsArr: [String], _ assignmentsArr: [String]) -> [[Str
         // First column is the student name
         row.append(studentsArr[rowNum - 1])
         // Loop through column numbers
-        for colNum in 1...assignmentsArr.count {
+        for _ in 1...assignmentsArr.count {
             // Generate a random mark
             let mark: Int = generateRandomMark()
             // Append the mark to the row
